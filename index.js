@@ -1,45 +1,71 @@
-var data = null;
+// Define a collection of books
+const books = [
+    {
+        book_name: "Book 1",
+        author_name: "Author 1",
+        genre: "Fiction",
+        published: "2022",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        book_image: "book1.jpg",
+    },
+    {
+        book_name: "Book 2",
+        author_name: "Author 2",
+        genre: "Non-fiction",
+        published: "2021",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        book_image: "book2.jpg",
+    },
+    {
+        book_name: "Book 3",
+        author_name: "Author 3",
+        genre: "Mystery",
+        published: "2023",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        book_image: "book3.jpg",
+    },{
+        book_name: "Book 4",
+        author_name: "Author 4",
+        genre: "Science Fiction",
+        published: "2020",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        book_image: "book4.jpg",
+    },
+    {
+        book_name: "Book 5",
+        author_name: "Author 5",
+        genre: "Fantasy",
+        published: "2019",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        book_image: "book5.jpg",
+    },
+];
 
-var xhr = new XMLHttpRequest();
-xhr.withCredentials = true;
+// Function to display books
+function displayBooks() {
+    const bookListContainer = document.getElementById("bookList");
 
-xhr.addEventListener("readystatechange", function () {
-    if (this.readyState === this.DONE) {
-        var bookList = JSON.parse(this.responseText);
-        displayBooks(bookList.result);
-    }
-});
-
-xhr.open("GET", "https://api.collectapi.com/book/newBook");
-xhr.setRequestHeader("content-type", "application/json");
-xhr.setRequestHeader("authorization", "apikey 7x0kRaUFEYltA800xas1gw:7lOeDTGVqmWgMynvC9lXXP");
-
-xhr.send(data);
-
-function displayBooks(books) {
-    var bookListContainer = document.getElementById("bookList");
-
-    books.forEach(function (book) {
-        var bookDiv = document.createElement("div");
+    books.forEach((book) => {
+        const bookDiv = document.createElement("div");
         bookDiv.classList.add("book");
 
-        var bookImage = document.createElement("img");
+        const bookImage = document.createElement("img");
         bookImage.src = book.book_image;
         bookImage.alt = book.book_name;
 
-        var bookTitle = document.createElement("h2");
+        const bookTitle = document.createElement("h2");
         bookTitle.textContent = "Title: " + book.book_name;
 
-        var bookAuthor = document.createElement("p");
+        const bookAuthor = document.createElement("p");
         bookAuthor.textContent = "Author: " + book.author_name;
 
-        var bookGenre = document.createElement("p");
+        const bookGenre = document.createElement("p");
         bookGenre.textContent = "Genre: " + book.genre;
 
-        var bookPublished = document.createElement("p");
+        const bookPublished = document.createElement("p");
         bookPublished.textContent = "Published: " + book.published;
 
-        var bookDescription = document.createElement("p");
+        const bookDescription = document.createElement("p");
         bookDescription.textContent = "Description: " + book.description;
 
         bookDiv.appendChild(bookImage);
@@ -52,3 +78,6 @@ function displayBooks(books) {
         bookListContainer.appendChild(bookDiv);
     });
 }
+
+// Call the function to display books when the page loads
+window.onload = displayBooks;

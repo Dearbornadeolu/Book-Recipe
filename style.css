@@ -1,51 +1,93 @@
+/* General Styles for the Entire Page */
+
 body {
+    /* Set the default font family for the entire page to Arial or a generic sans-serif font. */
     font-family: Arial, sans-serif;
+
+    /* Set the background color of the entire page to a light gray shade. */
     background-color: #f5f5f5;
+
+    /* Remove default margin and padding from the body element to ensure consistency. */
     margin: 0;
     padding: 0;
 }
 
-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
+/* Styles for the Book Grid */
 
 .book-grid {
+    /* Use CSS Grid for the layout of the book grid. */
     display: grid;
+
+    /* Automatically generate grid columns with a minimum width of 250px and maximum width of 1fr (equal distribution of available space). */
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+
+    /* Add a 20px gap between grid items (books). */
     gap: 20px;
+
+    /* Set a maximum width for the book grid to ensure it doesn't become too wide. */
     max-width: 1200px;
+
+    /* Add padding around the book grid to create spacing between the grid and the edges of the page. */
     padding: 20px;
 }
 
+/* Styles for Individual Book Items */
+
 .book {
+    /* Set a white background for each book item. */
     background-color: #fff;
+
+    /* Add a subtle border and box shadow to create a card-like appearance. */
     border: 1px solid #ddd;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+
+    /* Add padding around each book item to create spacing between the content and the borders. */
     padding: 20px;
+
+    /* Center-align the text content within each book item. */
     text-align: center;
 }
 
+/* Styles for Book Images */
+
 .book img {
+    /* Ensure that book images don't exceed their parent container's width and maintain their aspect ratio. */
     max-width: 100%;
     height: auto;
 }
 
+/* Styles for Book Titles */
+
 .book h2 {
+    /* Set the font size for book titles to 20px. */
     font-size: 20px;
+
+    /* Add margins above and below book titles for spacing. */
     margin: 10px 0;
 }
 
+/* Styles for Book Descriptions */
+
 .book p {
+    /* Set the font size for book descriptions to 14px. */
     font-size: 14px;
+
+    /* Add margins above and below book descriptions for spacing. */
     margin: 5px 0;
 }
 
+/* Styles for the Footer */
+
 footer {
+    /* Center-align text content within the footer. */
     text-align: center;
+
+    /* Set the background color of the footer to a dark gray shade. */
     background-color: #333;
+
+    /* Set the text color of the footer to white. */
     color: #fff;
+
+    /* Add padding to the footer for spacing. */
     padding: 10px;
 }
