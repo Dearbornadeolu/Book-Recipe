@@ -48,6 +48,7 @@ const books = [
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         book_image: "book5.jpg",
     },
+    
 ];
 
 // Rest of the code remains the same...
