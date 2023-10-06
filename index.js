@@ -39,6 +39,30 @@ const books = [
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         book_image: "book5.jpg",
     },
+    {
+        book_name: "Book 6",
+        author_name: "Author 6",
+        genre: "Fantasy",
+        published: "2013",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        book_image: "book6.jpg",
+    },
+    {
+            book_name: "Book 7",
+            author_name: "Author 8",
+            genre: "Gothic",
+            published: "2063",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            book_image: "book7.jpg",
+    },
+    {
+            book_name: "Book 8",
+            author_name: "Author 8",
+            genre: "Gothic",
+            published: "063",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            book_image: "book8.jpg",
+    }
 ];
 
 // Function to display books
@@ -68,12 +92,16 @@ function displayBooks() {
         const bookDescription = document.createElement("p");
         bookDescription.textContent = "Description: " + book.description;
 
+        const bookReadmore = document.createElement("a");
+        bookReadmore.textContent = "Read More";
+
         bookDiv.appendChild(bookImage);
         bookDiv.appendChild(bookTitle);
         bookDiv.appendChild(bookAuthor);
         bookDiv.appendChild(bookGenre);
         bookDiv.appendChild(bookPublished);
         bookDiv.appendChild(bookDescription);
+        bookDiv.appendChild(bookReadmore);
 
         bookListContainer.appendChild(bookDiv);
     });
